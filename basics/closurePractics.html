@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absar Ahmad CLosure Practice</title>
+    <style>
+        body{
+            margin: 0; /* Remove default margin */
+    width: 100vw; /* Ensure the body spans the full width of the viewport */
+    height: 100vh; /* Ensure the body spans the full height of the viewport */
+    background-color: #313131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+        }
+
+        main{
+            text-decoration: dotted;
+        }
+
+        .btn{
+            width: 100px;
+            height: 40px;
+            padding: auto 20px;
+            background-color: red;
+            color: white;
+        }
+
+        .btn-or{
+            background-color: orange;
+        }
+
+        .btn-bl{
+            background-color: blue;
+        }
+
+        .btn-gr{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>Change Background Color</h3>
+        <button id="orange" class="btn btn-or">Orange</button>
+        <button id="blue" class="btn btn-bl">Blue</button>
+        <button id="green" class="btn btn-gr">Green</button>
+
+    </main>
+
+    
+</body>
+<script>
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange");
+    document.getElementById('blue').onclick = clickHandler("blue");
+    document.getElementById('green').onclick = clickHandler("green");
+</script>
+</html>
